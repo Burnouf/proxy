@@ -42,7 +42,7 @@ class Proxy(cherryproxy.CherryProxy):
       if not ('user-agent' in headers):
          print "User-Agent vide ou incorrect !"
          accepted = False
-      if not re.match('.*(\:[80|443])?', self.req.netloc):
+      if not re.match('.*(\:[80])?', self.req.netloc):
          print "Je suis un proxy web ! Tu m'entends ? WEB !"
          accepted = False
       if is_SSH_req(self.req.query):
