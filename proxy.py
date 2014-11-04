@@ -6,24 +6,51 @@ import cherryproxy
 def is_SSH_req(string):
    if string == None:
       return False
-   if 'OpenSSH_' in base64.b64decode(string):
-      return True
-   if 'OpenSSH_' in base64.b32decode(string):
-      return True
-   if 'OpenSSH_' in base64.b16decode(string):
-      return True
-   if 'OpenSSH_' in binascii.a2b_uu(string):
-      return True
-   if 'OpenSSH_' in binascii.a2b_base64(string):
-      return True
-   if 'OpenSSH_' in binascii.a2b_qp(string):
-      return True
-   if 'OpenSSH_' in binascii.a2b_hqx(string):
-      return True
-   if 'OpenSSH_' in binascii.a2b_hex(string):
-      return True
-   if 'OpenSSH_' in string:
-      return True
+   try :
+       if 'OpenSSH_' in base64.b64decode(string):
+         return True
+   except:
+       pass
+   try :
+        if 'OpenSSH_' in base64.b32decode(string):
+            return True
+   except:
+       pass
+   try :
+        if 'OpenSSH_' in base64.b16decode(string):
+            return True
+   except:
+       pass
+   try :
+        if 'OpenSSH_' in binascii.a2b_uu(string):
+            return True
+   except:
+       pass
+   try :
+       if 'OpenSSH_' in binascii.a2b_base64(string):
+            return True
+   except:
+       pass
+   try :
+       if 'OpenSSH_' in binascii.a2b_qp(string):
+            return True
+   except:
+       pass
+   try :
+       if 'OpenSSH_' in binascii.a2b_hqx(string):
+            return True
+   except:
+       pass
+   try :
+       if 'OpenSSH_' in binascii.a2b_hex(string):
+            return True
+   except:
+       pass
+   try :
+       if 'OpenSSH_' in string:
+            return True
+   except:
+       pass
    return False
 
 class Proxy(cherryproxy.CherryProxy):
