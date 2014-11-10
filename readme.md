@@ -1,4 +1,5 @@
 # Proxy 
+Par Burnouf Benjamin et Thibault Hazelart
 
 Proxy basé sur la solution CherryProxy placé au dessus de squid a qui il
 renvoie les paquets, pour le lancer : 
